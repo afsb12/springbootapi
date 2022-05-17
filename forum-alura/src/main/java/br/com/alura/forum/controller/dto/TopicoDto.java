@@ -7,7 +7,7 @@ import java.util.stream.Collectors;
 import br.com.alura.forum.modelo.Topico;
 
 public class TopicoDto {
-	
+
 	private Long id;
 	private String titulo;
 	private String mensagem;
@@ -19,23 +19,23 @@ public class TopicoDto {
 		this.mensagem = topico.getMensagem();
 		this.dataCriacao = topico.getDataCriacao();
 	}
-	
+
 	public Long getId() {
 		return id;
 	}
-	
+
 	public String getTitulo() {
 		return titulo;
 	}
-	
+
 	public String getMensagem() {
 		return mensagem;
 	}
-	
+
 	public LocalDateTime getDataCriacao() {
 		return dataCriacao;
 	}
-	
+
 	public static List<TopicoDto> converter(List<Topico> topicos) {
 		return topicos.stream().map(TopicoDto::new).collect(Collectors.toList());
 	}
