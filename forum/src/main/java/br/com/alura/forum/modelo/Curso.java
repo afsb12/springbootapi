@@ -5,7 +5,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-@Entity
+
+@Entity /*Estudar Curso JPA*/
 public class Curso {
 
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
