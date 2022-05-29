@@ -25,7 +25,7 @@ public class CursoController {
 			cursos = cursoRepository.findAll();
 		}
 		else {
-			cursos = cursoRepository.findByNome2(nomeCurso);
+			cursos = cursoRepository.findByNomeOrderByNomeAsc(nomeCurso);
 		}
 		return CursoDto.converter(cursos);
 	}
