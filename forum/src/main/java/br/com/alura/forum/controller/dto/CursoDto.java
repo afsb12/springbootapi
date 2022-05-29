@@ -10,12 +10,13 @@ public class CursoDto {
 	private String nome;
 	private String categoria;
 
-	public CursoDto(Long id, String nome, String categoria) {
+	public CursoDto(Curso curso) {
 		super();
-		this.id = id;
-		this.nome = nome;
-		this.categoria = categoria;
+		this.id = curso.getId();
+		this.nome = curso.getNome();
+		this.categoria = curso.getCategoria();
 	}
+	
 	public Long getId() {
 		return id;
 	}
