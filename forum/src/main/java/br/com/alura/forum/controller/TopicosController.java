@@ -3,6 +3,7 @@ package br.com.alura.forum.controller;
 import java.net.URI;
 import java.util.List;
 
+import br.com.alura.forum.controller.dto.DetalhesTopicoDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -48,10 +49,18 @@ public class TopicosController {
 		return ResponseEntity.created(uri).body(new TopicoDto(topico));
 	}
 
+	/*
 	@GetMapping("/{id}")
 	public TopicoDto detalhar(@PathVariable long id){
 		Topico topico = topicoRepository.getById(id);
 
 		return new TopicoDto(topico);
+	}*/
+
+	@GetMapping("/{id}")
+	public DetalhesTopicoDto detalhar(@PathVariable long id){
+		Topico topico = topicoRepository.getById(id);
+
+		return new DetalhesTopicoDto(topico);
 	}
 }
